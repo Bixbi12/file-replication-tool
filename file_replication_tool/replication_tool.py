@@ -104,7 +104,13 @@ class ReplicationGUI:
         schedule_replication(source, destination, [".cfg", ".log", ".dat"], interval, self.log_text)
         messagebox.showinfo("Success", f"Replication scheduled every {interval} minutes.")
 
+import os
+
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = ReplicationGUI(root)
-    root.mainloop()
+    if os.environ.get("CODESPACES"):  # Detect GitHub Codespaces
+        print("Running in GitHub Codespaces (GUI not supported). Use command-line mode.")
+    else:
+        root = tk.Tk()
+        app = ReplicationGUI(root)
+        root.mainloop()
+
