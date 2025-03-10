@@ -8,3 +8,5 @@ This tool replicates files with specific extensions from a source to a destinati
    ```sh
    git clone https://github.com/yourusername/file-replication-tool.git
    cd file-replication-tool
+pip install -r requirements.txt
+python file_replication_tool/replication_tool.py
